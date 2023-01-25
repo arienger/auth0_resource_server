@@ -50,6 +50,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests()
                 //.requestMatchers("/api/public").permitAll()
                 .requestMatchers("/api/private/**").authenticated()
+                .requestMatchers("/api/byggoffice/**").authenticated()
                 //.requestMatchers("/api/private-scoped").hasAuthority("SCOPE_read:messages")
                 .and().cors()
                 .and().oauth2ResourceServer().jwt();
